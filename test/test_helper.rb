@@ -1,0 +1,6 @@
+require "minitest/autorun"
+require "serialize"
+require "support/mock_user"
+require "support/mock_resource"
+require "support/user_serializer"
+require "support/resource_serializer"
