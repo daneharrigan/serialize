@@ -17,4 +17,5 @@ Gem::Specification.new do |gem|
 
   gem.add_runtime_dependency "json"
   gem.add_runtime_dependency "activesupport"
+  gem.add_runtime_dependency "builder"
 end
