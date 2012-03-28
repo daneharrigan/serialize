@@ -1,6 +1,6 @@
 require "serialize/version"
 require "serialize/generator"
-require "json"
+require "active_support/core_ext"
 
 class Serialize
   def initialize(object, options={})
@@ -10,7 +10,18 @@ class Serialize
   end
 
   def to_json(*args)
-    content.to_json
+    # args are empty unless called through
+    # another to_json call
+    args.empty? ? content.to_json : content
+  end
+
+  alias as_json to_json
+
+  def to_xml(*args)
+    # args are empty unless called through
+    # another to_xml call
+    options = args.empty? ? { root: @object.class.name.titleize.downcase } : args.first
+    content.to_xml(options)
   end
 
   def content
