@@ -16,4 +16,5 @@ Gem::Specification.new do |gem|
   gem.version       = Serialize::VERSION
 
   gem.add_runtime_dependency "json"
+  gem.add_runtime_dependency "activesupport"
 end
