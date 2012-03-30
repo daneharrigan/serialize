@@ -7,7 +7,7 @@ class Serialize::GeneratorTest < MiniTest::Unit::TestCase
       { name: name, age: age }
     end
 
-    @generator = Serialize::Generator.new(object, &block)
+    @generator = Serialize::Generator.new(object, block)
     @hash = { name: object.name, age: object.age }
   end
 

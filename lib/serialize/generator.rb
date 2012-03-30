@@ -1,6 +1,6 @@
 class Serialize
   class Generator
-    def initialize(object, &block)
+    def initialize(object, block)
       @object = object
       @block  = block
     end
