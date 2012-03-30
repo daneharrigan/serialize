@@ -51,4 +51,14 @@ class SerializeTest < MiniTest::Unit::TestCase
     serializer = ResourceSerializer.new(@resource)
     assert_equal @nested_hash.to_xml(root: "mock-resource"), serializer.to_xml
   end
+
+  def test_default_responses
+    serializer = UserSerializer.new(@user)
+    assert_equal ["application/json", "application/xml"], serializer.responses
+  end
+
+  def test_to_content_type
+    serializer = UserSerializer.new(@user)
+    assert_equal serializer.to("application/json"), serializer.to_json
+  end
 end

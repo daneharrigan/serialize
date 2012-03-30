@@ -12,6 +12,15 @@ class Serialize
     @block  = self.class.structures[key]
   end
 
+  def responses
+    @@serializers.keys
+  end
+
+  def to(content_type)
+    subtype = content_type.split("/").last
+    send("to_#{subtype}")
+  end
+
   def self.structure(key=nil, &block)
     key ||= :default
     structures[key] = block
