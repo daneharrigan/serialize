@@ -5,3 +5,4 @@ rvm:
   - jruby-19mode
   - rbx-19mode
   - ruby-head
+script: "ruby -Itest:lib test/all.rb"
