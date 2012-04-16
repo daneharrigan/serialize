@@ -9,7 +9,7 @@ class Serialize
     end
 
     def content
-      if object.is_a? Array
+      if object.respond_to? :map
         object.map { |obj| Generator.new(obj, @block).to_hash }
       else
         Generator.new(object, @block).to_hash

@@ -9,13 +9,13 @@ class Serialize
       instance_eval &@block
     end
 
-    def method_missing(*args)
+    def method_missing(*args, &block)
       method = args.first
 
       if @object.respond_to? method
-        @object.send *args
+        @object.send *args, &block
       else
-        super
+        raise NoMethodError
       end
     end
   end
