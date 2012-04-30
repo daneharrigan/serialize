@@ -1,5 +1,9 @@
 class Serialize
   class Generator
+    instance_methods.each do |m|
+      undef_method m unless m =~ /^(__|object_id)/
+    end
+
     def initialize(object, block)
       @object = object
       @block  = block
