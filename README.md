@@ -53,10 +53,20 @@ Or install it yourself as:
     @collection = App.all
     AppSerializer.new(@collection, :as => :extended)
 
+Enabling XML Support
+
+    # include dependenies
+    gem "activesupport"
+    gem "builder"
+
+    # require serialize/xml
+    require "serialize"
+    require "serialize/xml"
+
 ## Serialization Formats
 
-The `serialize` gem comes with JSON and XML support, but you can add
-your own.
+The `serialize` gem comes with JSON support enabled by default. XML has been disabled,
+but can be required. You can also add your own forms of serialization.
 
 To do this, you'll have to define a `render` method that accepts
 `*args`. Because JSON and XML parsing pass different arguments `*args`

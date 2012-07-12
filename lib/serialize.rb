@@ -2,8 +2,6 @@ require "serialize/version"
 require "serialize/generator"
 require "serialize/format"
 require "serialize/json"
-require "serialize/xml"
-require "active_support/core_ext"
 
 class Serialize
   def initialize(object, options={})
@@ -44,4 +42,3 @@ class Serialize
 end
 
 Serialize.register "application/json", Serialize::Json
-Serialize.register "application/xml",  Serialize::Xml

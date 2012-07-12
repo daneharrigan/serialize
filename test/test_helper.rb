@@ -1,5 +1,6 @@
 require "minitest/autorun"
 require "serialize"
+require "serialize/xml"
 require "support/mock_user"
 require "support/mock_resource"
 require "support/user_serializer"

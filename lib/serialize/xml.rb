@@ -1,3 +1,5 @@
+require "active_support/core_ext"
+
 class Serialize
   class Xml < Format
     def render(*args)
@@ -24,3 +26,4 @@ class Serialize
   end
 end
 
+Serialize.register "application/xml",  Serialize::Xml

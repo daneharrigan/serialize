@@ -9,7 +9,7 @@ class Serialize
     def initialize(object, block)
       @object = object
       @block  = block
-      @id = @object.id
+      @id = @object.id if @object.respond_to? :id
     end
 
     def to_hash

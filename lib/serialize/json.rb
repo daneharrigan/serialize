@@ -1,3 +1,5 @@
+require "yajl/json_gem"
+
 class Serialize
   class Json < Format
     def render(*args)

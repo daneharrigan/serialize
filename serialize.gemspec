@@ -15,7 +15,5 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Serialize::VERSION
 
-  gem.add_runtime_dependency "json"
-  gem.add_runtime_dependency "activesupport"
-  gem.add_runtime_dependency "builder"
+  gem.add_runtime_dependency "yajl-ruby"
 end
