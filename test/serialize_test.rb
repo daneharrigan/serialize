@@ -21,6 +21,12 @@ class SerializeTest < MiniTest::Unit::TestCase
     assert_equal @user_hash.to_json, serializer.to_json
   end
 
+  def test_new_json_serialization
+    @user_hash[:email] = @user.email
+    serializer = UserSerializer.new(@user, as: :new)
+    assert_equal @user_hash.to_json, serializer.to_json
+  end
+
   def test_collection_json_serialization
     serializer = UserSerializer.new(@collection)
     assert_equal @hash_collection.to_json, serializer.to_json

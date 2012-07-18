@@ -1,5 +1,10 @@
 # Changelog
 
+### 1.1.0
+
+* The object to be serialized can be passed into the structure for speed improvements
+* Benchmarked method_missing vs. passing in the object
+
 ### 1.0.0
 
 * XML support is disabled by default, but it can be enabled

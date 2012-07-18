@@ -13,7 +13,10 @@ class Serialize
     end
 
     def to_hash
-      instance_eval &@block
+      case @block.arity
+        when 0 then instance_eval &@block
+        when 1 then @block.call(@object)
+      end
     end
 
     def method_missing(*args, &block)

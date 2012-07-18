@@ -20,23 +20,23 @@ Or install it yourself as:
 
     class UserSerializer < Serialize
       # create a default serialization structure
-      structure do
+      structure do |user|
         {
-          :name   => name,
-          :gender => gender,
-          :email  => email
+          :name   => user.name,
+          :gender => user.gender,
+          :email  => user.email
         }
       end
 
       # create a named serialization structure
       structure :extended do
         {
-          :name   => name,
-          :gender => gender,
-          :email  => email,
-          :height => height,
-          :eye_color  => eye_color,
-          :hair_color => hair_color
+          :name   => user.name,
+          :gender => user.gender,
+          :email  => user.email,
+          :height => user.height,
+          :eye_color  => user.eye_color,
+          :hair_color => user.hair_color
         }
       end
     end

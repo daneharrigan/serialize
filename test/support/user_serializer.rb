@@ -13,4 +13,12 @@ class UserSerializer < Serialize
 		  email: email
 		}
 	end
+
+  structure :new do |user|
+		{
+		  name:  user.name,
+		  age:   user.age,
+		  email: user.email
+		}
+  end
 end
