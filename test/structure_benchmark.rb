@@ -12,7 +12,7 @@ class BenchSerializationTest < MiniTest::Unit::TestCase
     [100, 1_000, 10_000, 100_000, 1_000_000]
   end
 
-  def bench_with_method_missing
+  def bench_with_instance_eval
     assert_performance_linear do |n|
       collection = n.times.map do
         User.new(:name => "John Smith", :age => "27", :gender => "M")
@@ -22,7 +22,7 @@ class BenchSerializationTest < MiniTest::Unit::TestCase
     end
   end
 
-  def bench_without_method_missing
+  def bench_without_instance_eval
     assert_performance_linear do |n|
       collection = n.times.map do
         User.new(:name => "John Smith", :age => "27", :gender => "M")
