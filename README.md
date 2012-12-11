@@ -29,7 +29,7 @@ Or install it yourself as:
       end
 
       # create a named serialization structure
-      structure :extended do
+      structure :extended do |user|
         {
           :name   => user.name,
           :gender => user.gender,
@@ -55,7 +55,7 @@ Or install it yourself as:
 
 Enabling XML Support
 
-    # include dependenies
+    # include dependencies
     gem "activesupport"
     gem "builder"
 
